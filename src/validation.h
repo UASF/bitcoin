@@ -77,6 +77,8 @@ static const unsigned int BLOCKFILE_CHUNK_SIZE = 0x1000000; // 16 MiB
 static const unsigned int UNDOFILE_CHUNK_SIZE = 0x100000; // 1 MiB
 /** Default for -bip148 enforcement */
 static const unsigned int DEFAULT_BIP148 = true;
+/** Default for -bip91 enforcement */
+static const unsigned int DEFAULT_BIP91 = false;
 
 /** Maximum number of script-checking threads allowed */
 static const int MAX_SCRIPTCHECK_THREADS = 16;
