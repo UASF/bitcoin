@@ -5,6 +5,8 @@
 #include "clientversion.h"
 
 #include "tinyformat.h"
+#include "util.h"
+#include "validation.h"
 
 #include <string>
 
@@ -99,7 +101,10 @@ std::string FormatSubVersion(const std::string& name, int nClientVersion, const 
         ss << ")";
     }
     ss << "/";
-    if (!fBaseNameOnly)
-        ss << "UASF-Segwit:0.3(BIP148)/";
+    if (!fBaseNameOnly && GetBoolArg("-bip148", DEFAULT_BIP148)) {
+        ss << "UASF-Segwit:0.3(+BIP148)/";
+    } else {
+        ss << "UASF-Segwit:0.3(!BIP148)/"
+    }
     return ss.str();
 }
